@@ -8,4 +8,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4.2.2
             - name: bad things
-              run: ./commit-test.sh
+              run: |
+                git config --global user.name "anon"
+                git config --global user.email "username@users.noreply.github.com"
+                ./commit-test.sh
